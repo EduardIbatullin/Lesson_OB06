@@ -8,10 +8,10 @@ class Hero:
         self.attack_power = attack_power
 
     def attack(self, character):
-        self.attack_power += random.randint(-5, 5)
+        damage = self.attack_power + random.randint(-5, 5)
         character.health -= self.attack_power
-        print(f'{self.name} атаковал {character.name}, и нанёс {self.attack_power} очков урона.')
-        if character.health >= 0:
+        print(f'{self.name} атаковал {character.name}, и нанёс {damage} очков урона.')
+        if character.health > 0:
             print(f'У {character.name} осталось {character.health} очков здоровья.')
         else:
             print(f'{character.name} умер.')
