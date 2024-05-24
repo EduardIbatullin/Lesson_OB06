@@ -8,7 +8,7 @@ class Hero:
         self.attack_power = attack_power
 
     def attack(self, character):
-        damage = self.attack_power + random.randint(-5, 5)
+        damage = self.attack_power + random.randint(-10, 10)
         character.health -= self.attack_power
         print(f'{self.name} атаковал {character.name}, и нанёс {damage} очков урона.')
         if character.health > 0:
@@ -40,9 +40,11 @@ class Game:
             print(f'\n{self.hero2.name} выиграл!')
 
 
-hero_1 = Hero('Игрок', 100, 20)
-hero_2 = Hero('Компьютер', 100, 20)
+hero_1 = Hero('Игрок', 100, 10)
+hero_2 = Hero('Компьютер', 100, 10)
 
 game = Game(hero_1, hero_2)
+
+print(f"\nНачинается бой между {hero_1.name} и {hero_2.name}.")
 
 game.start()
